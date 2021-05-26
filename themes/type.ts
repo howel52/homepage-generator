@@ -1,3 +1,4 @@
 export interface DOC_COMMON {
-  theme: string
+  theme: string;
+  favicon?: string;
 }
