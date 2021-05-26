@@ -9,7 +9,7 @@ const content: IZSME = {
     city: "Hangzhou, China",
     status: [
       {
-        text: "Stay LIZHI, Believe in the future"
+        text: "The cursor always blinks : )"
       }
     ],
     social: [
