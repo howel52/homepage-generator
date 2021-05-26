@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>{{ title }}</title>
+</head>
+<style>
+  /*
+    https://github.com/isaacs/back-to-markdown.css
+    CSS code released under the following license:
+    
+    The ISC License
+    
+    Copyright (c) Isaac Z. Schlueter
+    
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies.
+    
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+    IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    */
+
+  * {
+    font-family: monospace;
+    font-size: 1em;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  p,
+  pre {
+    margin-bottom: 1em;
+  }
+
+  strong,
+  b {
+    font-weight: bold;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  strong::before,
+  strong::after,
+  b::before,
+  b::after {
+    content: "**";
+  }
+
+  em::before,
+  em::after,
+  i::before,
+  i::after {
+    content: "_";
+  }
+
+  pre,
+  code {
+    background: #fafafa;
+    color: #000;
+  }
+
+  pre {
+    overflow: auto;
+  }
+
+  pre::before,
+  pre::after {
+    content: "```";
+    display: block;
+  }
+
+  code::before,
+  code::after {
+    content: "`";
+    background: #fff;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: "";
+  }
+
+  ol li {
+    margin-left: 4ex;
+  }
+
+  ul li {
+    margin-left: 3ex;
+  }
+
+  ol li {
+    list-style: decimal outside;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #900;
+  }
+
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code,
+  h5 code,
+  h6 code {
+    background: #fff;
+  }
+
+  h1::before {
+    content: "# ";
+    color: #09a;
+  }
+
+  h2::before {
+    content: "## ";
+    color: #09a;
+  }
+
+  h3::before {
+    content: "### ";
+    color: #09a;
+  }
+
+  h4::before {
+    content: "#### ";
+    color: #09a;
+  }
+
+  h5::before {
+    content: "##### ";
+    color: #09a;
+  }
+
+  h6::before {
+    content: "###### ";
+    color: #09a;
+  }
+
+  ul li::before {
+    content: "* ";
+    display: block;
+    margin-left: -3ex;
+    color: #fb0;
+    float: left;
+  }
+
+  body {
+    width: 100%;
+    margin: 0em auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #f00;
+  }
+
+  a::before {
+    content: "[";
+  }
+
+  a::after {
+    content: "]";
+  }
+
+  #container {
+    padding-bottom: 10em;
+  }
+
+  @media print {
+    body {
+      width: auto;
+      font-size: 10pt;
+    }
+  }
+</style>
+
+<body>
+  <div id="container">
+    <h1>{{ title }}</h1>
+
+    {{#if mail}}
+    <p>
+      <a target="_blank" href="mailto:{{mail}}">{{mail}}</a>
+    </p>
+    {{/if}}
+
+    {{#if city}}
+    <p>Hangzhou, China</p>
+    {{/if}}
+
+    {{#if status}}
+    <h2>Status</h2>
+    {{#each status}}
+    <p>{{text}}</p>
+    {{/each}}
+    {{/if}}
+
+    {{#if experience}}
+    <h2>Experience</h2>
+    
+    <ul>
+      {{#each experience }}
+      <li>{{interval}}: {{company}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
+
+    {{#if social}}
+    <h2>Social</h2>
+    <ul>
+      {{#each social}}
+      <li>{{platform}}: <a target="_blank" href="{{link}}">{{id}}</a></li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
+    {{#if education}}
+    <h2>Education</h2>
+    <ul>
+      {{#each education}}
+      <li>{{interval}}: {{college}}</li>
+      {{/each}}
+    </ul>
+    {{/if}}
+  </div>
+</body>
+
+</html>
