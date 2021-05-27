@@ -42,7 +42,7 @@ const content: IZSME = {
     ],
     experience: [
       {
-        interval: "2020/06 - Present",
+        interval: "2020/06 - 2021/06",
         company: "Ant Group"
       },
       {
