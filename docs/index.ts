@@ -15,11 +15,6 @@ const content: IZSME = {
     ],
     social: [
       {
-        platform: "Weibo",
-        id: "@茶山小旋风",
-        link: "//weibo.com/209995161/"
-      },
-      {
         platform: "Twitter",
         id: "@howel52",
         link: "//twitter.com/howel52",
@@ -41,6 +36,10 @@ const content: IZSME = {
       }
     ],
     experience: [
+      {
+        interval: "2021/06 - Present",
+        company: "ByteDance, Ltd."
+      },
       {
         interval: "2020/06 - 2021/06",
         company: "Ant Group"

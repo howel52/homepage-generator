@@ -5,7 +5,7 @@ import Handlebars from "handlebars";
 
 export const generate = (docFileName: string, targetDir: string): void => {
   const docRoot = path.resolve(__dirname, "../docs");
-  
+
   const { default: { data, theme: themePath, favicon } } = require(path.resolve(docRoot, docFileName));
 
   const template = Handlebars.compile(fs.readFileSync(themePath, "utf-8"));
